@@ -102,7 +102,7 @@ func (c *SAPAPICaller) Header(purchaseRequisition string) {
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": itemDeliveryAddressData, "function": "PurchaseRequisitionItemDeliveryAddress"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": itemDeliveryAddressData, "function": "PurchaseRequisitionToItemDeliveryAddress"})
 	if err != nil {
 		c.log.Error(err)
 		return
@@ -215,7 +215,7 @@ func (c *SAPAPICaller) Item(purchaseRequisition, purchaseRequisitionItem string)
 		c.log.Error(err)
 		return
 	}
-	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": itemDeliveryAddressData, "function": "PurchaseRequisitionItemDeliveryAddress"})
+	err = c.outputter.Send(c.outputQueues[0], map[string]interface{}{"message": itemDeliveryAddressData, "function": "PurchaseRequisitionToItemDeliveryAddress"})
 	if err != nil {
 		c.log.Error(err)
 		return
